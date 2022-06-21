@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "mongodb+srv://seke:mern@cluster0.11m4a.mongodb.net/EatRight!?retryWrites=true&w=majority"
+  "mongodb+srv://seke<password>@cluster0.11m4a.mongodb.net/EatRight!?retryWrites=true&w=majority"
 );
 
 // app.get("/getUsers", (req, res) => { })
