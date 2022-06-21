@@ -1,13 +1,13 @@
 const express = require("express");
-const cors = require("cors");
+const app = express();
 const mongoose = require("mongoose");
 
-require("dotenv").config();
+mongoose.connect(
+  "mongodb+srv://seke:mern@cluster0.11m4a.mongodb.net/EatRight!?retryWrites=true&w=majority"
+);
 
-const app = express();
-const port = process.env.PORT || 5000;
+// app.get("/getUsers", (req, res) => { })
 
-app.use(cors());
-app.use(express.json());
-
-const DATABASE_CONNECTION = "";
+app.listen(3001, () => {
+  console.log("Server is running on port 3001");
+});
