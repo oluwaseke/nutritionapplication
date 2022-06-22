@@ -1,3 +1,5 @@
+import * as React from "react";
+
 import {
   Box,
   Button,
@@ -7,24 +9,15 @@ import {
   Stack,
   Text,
   createIcon,
-  useColorModeValue,
 } from "@chakra-ui/react";
 
-import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   let navigate = useNavigate();
   return (
     <>
-      <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
-
-      <Container maxW={"3xl"} minW={"100vw"}>
+      <Container bg={"white"} maxW={"3xl"} minW={"100vw"}>
         <Stack
           as={Box}
           textAlign={"center"}
@@ -33,6 +26,7 @@ export default function Hero() {
         >
           <Heading
             fontWeight={600}
+            color={"black"}
             fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
             lineHeight={"110%"}
           >
@@ -41,7 +35,7 @@ export default function Hero() {
               to EatRight! :)
             </Text>
           </Heading>
-          <Text color={"gray.500"}>
+          <Text color={"black"}>
             Create meal plans for individuals and households <br />
             Track your calorie intake <br />
             Go through a large collection of recipes and find your new favorites{" "}
@@ -71,13 +65,14 @@ export default function Hero() {
             <Box>
               <Icon
                 as={Arrow}
-                color={useColorModeValue("gray.800", "gray.300")}
+                color={"gray.800"}
                 w={71}
                 position={"absolute"}
                 right={-71}
                 top={"10px"}
               />
               <Text
+                color={"gray.600"}
                 fontSize={"lg"}
                 fontFamily={"Caveat"}
                 position={"absolute"}

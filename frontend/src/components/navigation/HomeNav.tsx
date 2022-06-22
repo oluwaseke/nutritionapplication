@@ -12,7 +12,6 @@ import {
   Stack,
   Text,
   useBreakpointValue,
-  useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import {
@@ -21,7 +20,7 @@ import {
   CloseIcon,
   HamburgerIcon,
 } from "@chakra-ui/icons";
-
+import * as React from "react";
 import { useNavigate } from "react-router-dom";
 
 const HomeNav = () => {
@@ -42,14 +41,14 @@ const HomeNav = () => {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={"white"}
+        color={"gray.600"}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
+        borderColor={"gray.200"}
         align={"center"}
       >
         <Flex
@@ -70,7 +69,7 @@ const HomeNav = () => {
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
+            color={"gray.800"}
           >
             EatRight!
           </Text>
@@ -88,6 +87,7 @@ const HomeNav = () => {
         >
           <Button
             as={"a"}
+            color={"black"}
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
@@ -124,9 +124,9 @@ const HomeNav = () => {
 };
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const linkColor = "gray.600";
+  const linkHoverColor = "gray.800";
+  const popoverContentBgColor = "white";
 
   return (
     <Stack direction={"row"} spacing={4}>
@@ -180,7 +180,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("red.100", "gray.900") }}
+      _hover={{ bg: "red.100" }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
@@ -211,11 +211,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ md: "none" }}
-    >
+    <Stack bg={"white"} p={4} display={{ md: "none" }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -238,10 +234,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           textDecoration: "none",
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
+        <Text fontWeight={600} color={"gray.600"}>
           {label}
         </Text>
         {children && (
@@ -261,7 +254,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           pl={4}
           borderLeft={1}
           borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
+          borderColor={"gray.200"}
           align={"start"}
         >
           {children &&

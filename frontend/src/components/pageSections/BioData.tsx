@@ -17,15 +17,15 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function SignUp() {
+export default function BioData() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    username: "",
-    password: "",
-    password2: "",
+    age: undefined,
+    height: undefined,
+    weight: undefined,
+    genotype: "",
+    bloodGrp: "",
   });
-  const { name, email, username, password, password2 } = formData;
+  const { age, height, weight, genotype, bloodGrp } = formData;
   const onChange = (e: any) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -41,11 +41,8 @@ export default function SignUp() {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} textAlign={"center"}>
-            Sign up
+            BioData
           </Heading>
-          <Text fontSize={"lg"} color={"gray.500"}>
-            to enjoy all of our cool features ✌️
-          </Text>
         </Stack>
         <Box rounded={"lg"} bg={"white"} boxShadow={"lg"} p={8}>
           <form onSubmit={onSubmit}>
@@ -53,12 +50,12 @@ export default function SignUp() {
               <HStack>
                 <Box>
                   <FormControl isRequired>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Age</FormLabel>
                     <Input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={name}
+                      type="number"
+                      id="age"
+                      name="age"
+                      value={age}
                       onChange={onChange}
                       border="1px"
                       borderColor="gray.900"
@@ -67,13 +64,13 @@ export default function SignUp() {
                 </Box>
                 <Box>
                   <FormControl isRequired>
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel>Height (in cm)</FormLabel>
                     <Input
-                      id="username"
-                      name="username"
-                      value={username}
+                      id="height"
+                      name="height"
+                      value={height}
                       onChange={onChange}
-                      type="text"
+                      type="number"
                       border="1px"
                       borderColor="gray.900"
                     />
@@ -81,40 +78,40 @@ export default function SignUp() {
                 </Box>
               </HStack>
               <FormControl isRequired>
-                <FormLabel>Email address</FormLabel>
+                <FormLabel>Weight (in kg)</FormLabel>
                 <Input
-                  id="email"
-                  name="email"
-                  value={email}
+                  id="weight"
+                  name="weight"
+                  value={weight}
                   onChange={onChange}
-                  type="email"
+                  type="number"
                   border="1px"
                   borderColor="gray.900"
                 />
               </FormControl>
               <FormControl isRequired>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>Genotype</FormLabel>
                 <InputGroup>
                   <Input
-                    id="password"
-                    name="password"
-                    value={password}
+                    id="genotype"
+                    name="genotype"
+                    value={genotype}
                     onChange={onChange}
-                    type="password"
+                    type="text"
                     border="1px"
                     borderColor="gray.900"
                   />
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
-                <FormLabel>Confirm password</FormLabel>
+                <FormLabel>Blood Group</FormLabel>
                 <InputGroup>
                   <Input
-                    id="password2"
-                    name="password2"
-                    value={password2}
+                    id="bloodGrp"
+                    name="bloodGrp"
+                    value={bloodGrp}
                     onChange={onChange}
-                    type="password"
+                    type="text"
                     border="1px"
                     borderColor="gray.900"
                   />
@@ -122,31 +119,18 @@ export default function SignUp() {
               </FormControl>
               <Stack spacing={10} pt={2}>
                 <Button
-                  loadingText="Submitting"
+                  type="submit"
+                  loadingText="Loading"
                   size="lg"
                   bg={"red.400"}
                   color={"white"}
                   _hover={{
                     bg: "red.300",
                   }}
-                  onClick={() => navigate("/biodata")}
+                  onClick={() => navigate("/meal-planner")}
                 >
-                  Sign up
+                  Submit
                 </Button>
-              </Stack>
-              <Stack pt={6}>
-                <Text align={"center"}>
-                  Already a user?{" "}
-                  <Button
-                    variant={"link"}
-                    colorScheme={"red"}
-                    size={"md"}
-                    color={"red.100"}
-                    onClick={() => navigate("/login")}
-                  >
-                    Login
-                  </Button>
-                </Text>
               </Stack>
             </Stack>
           </form>

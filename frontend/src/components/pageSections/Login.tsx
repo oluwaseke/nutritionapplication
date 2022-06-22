@@ -1,3 +1,5 @@
+import * as React from "react";
+
 import {
   Box,
   Button,
@@ -9,7 +11,6 @@ import {
   Input,
   Stack,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 
 import { useNavigate } from "react-router-dom";
@@ -32,22 +33,12 @@ export default function SimpleCard() {
   };
   let navigate = useNavigate();
   return (
-    <Flex
-      minH={"100vh"}
-      align={"center"}
-      justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
-    >
+    <Flex minH={"100vh"} align={"center"} justify={"center"} bg={"gray.50"}>
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"}>Sign in to your account</Heading>
         </Stack>
-        <Box
-          rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
-          boxShadow={"lg"}
-          p={8}
-        >
+        <Box rounded={"lg"} bg={"white"} boxShadow={"lg"} p={8}>
           <form onSubmit={onSubmit}>
             <Stack spacing={4}>
               <FormControl>
@@ -58,6 +49,8 @@ export default function SimpleCard() {
                   value={email}
                   onChange={onChange}
                   type="email"
+                  border="1px"
+                  borderColor="gray.900"
                 />
               </FormControl>
               <FormControl>
@@ -68,6 +61,8 @@ export default function SimpleCard() {
                   value={password}
                   onChange={onChange}
                   type="password"
+                  border="1px"
+                  borderColor="gray.900"
                 />
               </FormControl>
               <Stack spacing={10}>
@@ -75,18 +70,7 @@ export default function SimpleCard() {
                   direction={{ base: "column", sm: "row" }}
                   align={"center"}
                   justify={"space-between"}
-                >
-                  <Checkbox>Remember me</Checkbox>
-                  <Button
-                    variant={"link"}
-                    colorScheme={"red"}
-                    size={"sm"}
-                    color={"red.100"}
-                    onClick={() => navigate("/forgot-password")}
-                  >
-                    Forgot Password?
-                  </Button>
-                </Stack>
+                ></Stack>
                 <Button
                   bg={"red.400"}
                   color={"white"}

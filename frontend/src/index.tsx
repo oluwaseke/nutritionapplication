@@ -1,10 +1,10 @@
+import "./index.css";
+
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 
 import { App } from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { ColorModeScript } from "@chakra-ui/react";
-import { Helmet } from "react-helmet";
 
 // import theme from "./theme";
 
@@ -17,12 +17,6 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>EatRight</title>
-    </Helmet>
-    <ColorModeScript initialColorMode={"dark"} />
     <BrowserRouter>
       <App />
     </BrowserRouter>

@@ -1,10 +1,13 @@
+import * as React from "react";
+
 import { Box } from "@chakra-ui/react";
-import Footer from "../../pageSections/Footer";
+import Footer from "../pageSections/Footer";
 import Hero from "./Hero";
-import HomeNav from "../../navigation/HomeNav";
+import HomeNav from "../navigation/HomeNav";
+// import OtherNav from "../../navigation/OtherNav";
 // import Login from "../../pageSections/Login";
 // import SignUp from "../../pageSections/SignUp";
-// import Testimonials from "./Testimonials";
+import Testimonials from "./Testimonials";
 
 export default function HomePage() {
   // const signInHandler = (value) => {
@@ -15,6 +18,7 @@ export default function HomePage() {
     <Box>
       <HomeNav />
       <Hero />
+      <Testimonials />
       <Footer />
     </Box>
   );
